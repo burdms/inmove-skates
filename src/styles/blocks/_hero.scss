@@ -1,0 +1,160 @@
+.hero {
+  background-color: #f5f5f5;
+
+  &-slider {
+    position: relative;
+    padding: 125px 0 120px;
+
+    &__slide {
+      margin-bottom: 80px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 21px;
+      right: -116px;
+      width: 710px;
+      height: 525px;
+      background: url("../images/hero-background_desktop.png") no-repeat;
+    }
+  }
+
+  &-slide {
+    position: relative;
+
+    &__info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__surtitle {
+      margin-bottom: 12px;
+      @include fontSize(20px, 24px);
+      @include fontStyling(700);
+      color: $color-primary;
+    }
+
+    &__title {
+      margin-bottom: 4px;
+      @include fontSize(60px, 73px);
+      @include fontStyling(900);
+    }
+
+    &__subtitle {
+      margin-bottom: 25px;
+      @include fontSize(30px, 37px);
+      @include fontStyling(700);
+    }
+
+    &__description {
+      max-width: 433px;
+      margin-bottom: 43px;
+      @include fontSize(14px, 22px);
+      @include fontStyling(500);
+    }
+
+    &__button {
+      justify-content: flex-start;
+      width: 230px;
+      height: 50px;
+      padding: 15px 53px;
+      @include fontSize(16px, 20px);
+      @include fontStyling(600);
+      background-color: $color-primary;
+      @include animation;
+    }
+
+    &__image {
+      position: absolute;
+      top: -43px;
+      right: -27px;
+    }
+  }
+
+  &-button {
+    overflow: hidden;
+
+    &__text {
+      margin-right: 16px;
+    }
+
+    &__arrow {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.slider {
+  &-navigation {
+    position: relative;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__button {
+      display: flex;
+      align-items: center;
+      width: 36px;
+      height: 36px;
+    }
+
+    &__arrow {
+      fill: $color-dark-grey;
+      width: 24px;
+      height: 24px;
+
+      &_prev {
+        transform: rotate(180deg);
+      }
+    }
+
+    &__pagination {
+      margin: 0 12px;
+    }
+  }
+
+  &-pagination {
+    display: flex;
+    align-items: center;
+
+    &__dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      border: 1.5px solid $color-dark-grey;
+      cursor: pointer;
+
+      &_active {
+        background-color: $color-dark-grey;
+      }
+
+      &:not(:last-child) {
+        margin-right: 17px;
+      }
+    }
+  }
+}
+
+@media (min-width: 993px) {
+  .slider {
+    &-navigation {
+      &__button:hover {
+        .slider-navigation__arrow {
+          fill: $color-dark-grey_hover;
+        }
+      }
+    }
+
+    &-pagination {
+      &__dot {
+        &:hover {
+          border-color: $color-dark-grey_hover;
+          background-color: $color-dark-grey_hover;
+        }
+      }
+    }
+  }
+}

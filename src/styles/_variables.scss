@@ -1,6 +1,8 @@
 $color-primary: #f67f67;
+$color-prmary_hover: darken($color-primary, 10);
 $color-body: #666666;
 $color-input: #bcbcbc;
 $color-icons: #130f26;
 $color-grey: #ececec;
 $color-dark-grey: #7b7b7b;
+$color-dark-grey_hover: lighten($color-dark-grey, 10);

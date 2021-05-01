@@ -47,4 +47,8 @@
       </clipPath>
     </defs>
   </symbol>
+
+  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="arrow">
+    <path d="M22.298 12.707a1 1 0 000-1.414l-6.364-6.364a1 1 0 10-1.414 1.414L20.177 12l-5.657 5.657a1 1 0 001.414 1.414l6.364-6.364zM3 13h18.591v-2H3v2z"></path>
+  </symbol>
 </svg>

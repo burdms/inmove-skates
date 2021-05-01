@@ -3,4 +3,43 @@ extends pug/layout/head
 block variables
   - var pageTitle = 'InMove Skates'
 
+
+  
 block content
+  main.hero
+    .container
+      .hero-slider.slider
+        .hero-slider__slide.hero-slide
+          //- Slide 1
+          .hero-slide__info
+            span.hero-slide__surtitle
+              | Best for beginners
+            h1.hero-slide__title
+              | FR Skates FRX 80
+            span.hero-slide__subtitle
+              | in Black and Orange
+            p.hero-slide__description
+              | One of the best freeride skates in the World! 
+              | Great&nbsp;comfrtable liners, special premium insoles and wheels.
+            a(href="#").button.button_primary.hero-slide__button.hero-button
+              span.hero-button__text
+                | Learn more
+              img(src="./images/arrow.svg")
+
+          img(src="./images/slide1.png").hero-slide__image
+        
+        //- Slider navigation
+        .slider-navigation
+          button.slider-navigation__button.slider-navigation__button_prev
+            svg.slider-navigation__arrow.slider-navigation__arrow_prev
+              use(xlink:href="./images/sprites.svg#arrow")
+
+          ul.slider-navigation__pagination.slider-pagination
+            li.slider-pagination__dot.slider-pagination__dot_active
+            li.slider-pagination__dot
+            li.slider-pagination__dot
+
+          button.slider-navigation__button.slider-navigation__button_next
+            svg.slider-navigation__arrow
+              use(xlink:href="./images/sprites.svg#arrow")
+        
