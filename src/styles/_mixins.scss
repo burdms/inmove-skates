@@ -1,0 +1,13 @@
+@mixin fontSize($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin fontStyling($weight: 400, $style: normal) {
+  font-weight: $weight;
+  font-style: $style;
+}
+
+@mixin animation {
+  transition: all ease-out 0.2s;
+}

@@ -1,0 +1,323 @@
+.header {
+  &-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 8px 0 7px;
+  }
+
+  &-menu {
+    display: none;
+    width: 24px;
+    height: 24px;
+
+    &__burger {
+      width: 23.39px;
+      height: 19.34px;
+    }
+  }
+
+  &-logo {
+    width: 96.72px;
+    height: 60.05px;
+
+    &__image {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    align-items: center;
+    @include fontStyling();
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+
+    &__link {
+      @include animation;
+
+      &:not(:last-child) {
+        margin-right: 55px;
+      }
+    }
+  }
+
+  &-toolbar {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+
+    &__search {
+      position: relative;
+      width: 117.61px;
+      margin-right: 18px;
+    }
+
+    &__look {
+      display: none;
+    }
+
+    &__login {
+      margin-right: 8px;
+    }
+
+    &__icon {
+      stroke: $color-icons;
+      width: 25px;
+      height: 25px;
+      @include animation;
+    }
+  }
+
+  &-search {
+    &__icon {
+      position: absolute;
+      top: 5.85px;
+      left: 4.63px;
+      width: 19.19px;
+      height: 14.08px;
+      stroke: $color-input;
+      @include animation;
+    }
+
+    &__input {
+      padding: 3.22px 5px 3.22px 29.29px;
+      width: 100%;
+      font-size: 14px;
+      @include fontStyling();
+      border: none;
+      border-bottom: 1px solid $color-input;
+
+      &::placeholder {
+        font-size: 12px;
+        @include fontStyling();
+        color: $color-input;
+      }
+
+      &:focus {
+        border-color: $color-primary;
+      }
+    }
+  }
+
+  &__logo {
+    margin-right: 79px;
+  }
+
+  &__nav {
+    margin-right: 90px;
+  }
+}
+
+.menu {
+  left: 0;
+  right: 0;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 57px 0 115px;
+  @include animation;
+
+  &-search {
+    display: none;
+    margin-bottom: 53px;
+
+    &__input {
+      padding: 5px;
+      width: 100%;
+      font-size: 14px;
+      @include fontStyling();
+      border: none;
+      border-bottom: 1px solid $color-input;
+
+      &::placeholder {
+        font-size: 12px;
+        @include fontStyling();
+        color: $color-input;
+      }
+
+      &:focus {
+        border-color: $color-primary;
+      }
+    }
+
+    &_active {
+      display: inline-block;
+      overflow-y: scroll;
+    }
+  }
+
+  &-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include fontStyling();
+    font-size: 14px;
+    line-height: 17px;
+    color: #000;
+
+    &__item {
+      &:not(:last-child) {
+        margin-bottom: 53px;
+      }
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__login {
+      margin-bottom: 14px;
+      @include fontSize(14px, 17px);
+    }
+
+    &__google {
+      justify-content: start;
+      padding: 0 14px;
+      @include fontSize(12px, 15px);
+    }
+
+    &__icon {
+      margin-right: 14px;
+      width: 21px;
+      height: 19px;
+    }
+  }
+
+  &__links {
+    margin-bottom: 47px;
+  }
+
+  &_active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    @include animation;
+  }
+}
+
+// Hover effects
+@media (min-width: 993px) {
+  .header {
+    &-nav {
+      &__link:hover {
+        color: $color-primary;
+        @include animation;
+      }
+    }
+
+    &-toolbar {
+      &__button {
+        &:hover {
+          .header-toolbar__icon {
+            stroke: $color-primary;
+            @include animation;
+          }
+        }
+      }
+    }
+
+    &-search {
+      &:hover {
+        .header-search__icon {
+          stroke: $color-primary;
+          @include animation;
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .header {
+    &-container {
+      max-width: 992px;
+      justify-content: space-between;
+    }
+
+    &-nav {
+      &__link {
+        &:not(:last-child) {
+          margin-right: 25px;
+        }
+      }
+    }
+
+    &__logo {
+      margin-right: 0;
+    }
+
+    &__nav {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header {
+    height: 63px;
+
+    &-container {
+      max-width: 700px;
+      padding: 33px 0 13px;
+    }
+
+    &-menu {
+      display: block;
+    }
+
+    &-logo {
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 86px;
+      height: 53px;
+    }
+
+    &-nav {
+      display: none;
+    }
+
+    &-toolbar {
+      &__search {
+        display: none;
+      }
+
+      &__look {
+        display: block;
+      }
+
+      &__login {
+        display: none;
+      }
+
+      &__icon {
+        stroke: $color-dark-grey;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .header {
+    &-container {
+      width: 92.5%;
+      max-width: 576px;
+    }
+
+    &-menu {
+      margin-left: 10px;
+    }
+  }
+}

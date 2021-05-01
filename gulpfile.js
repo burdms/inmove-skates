@@ -14,7 +14,7 @@ const del = require('del');
 
 gulp.task('pug', () => {
   return gulp
-    .src('./src/index.pug')
+    .src('./src/*.pug')
     .pipe(
       pug({
         pretty: true,

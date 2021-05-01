@@ -1,0 +1,17 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  min-width: 182px;
+  height: 40px;
+  @include fontStyling(500);
+  color: $color-dark-grey;
+  background-color: $color-grey;
+
+  &_primary {
+    @include fontStyling(600);
+    color: #fff;
+    background-color: $color-primary;
+  }
+}
