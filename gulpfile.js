@@ -63,26 +63,11 @@ gulp.task('js', () => {
     );
 });
 
-gulp.task('images', () => {
+gulp.task('resources', () => {
   return gulp
-    .src('./src/images/**/*')
-    .pipe(gulp.dest('./build/images/'))
-    .pipe(
-      browserSync.reload({
-        stream: true,
-      })
-    );
-});
-
-gulp.task('fonts', () => {
-  return gulp
-    .src('./src/fonts/**/*')
-    .pipe(gulp.dest('./build/fonts/'))
-    .pipe(
-      browserSync.reload({
-        stream: true,
-      })
-    );
+    .src('./src/resources/**/*')
+    .pipe(gulp.dest('./build/'))
+    .on('end', browserSync.reload);
 });
 
 gulp.task('clean', () => {
@@ -93,7 +78,7 @@ gulp.task('watch', () => {
   gulp.watch('./src/**/*.pug', gulp.series('pug'));
   gulp.watch('./src/styles/**/*.scss', gulp.series('sass'));
   gulp.watch('./src/scripts/**/*.js', gulp.series('js'));
-  gulp.watch('./src/images/**/*', gulp.series('images'));
+  gulp.watch('./src/resources/**/*', gulp.series('resources'));
 });
 
 gulp.task('serve', () => {
@@ -108,8 +93,7 @@ gulp.task(
   'default',
   gulp.series(
     'clean',
-    'images',
-    'fonts',
+    'resources',
     gulp.parallel('pug', 'js'),
     'sass',
     gulp.parallel('watch', 'serve')
