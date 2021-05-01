@@ -1,4 +1,6 @@
 .header {
+  position: relative;
+
   &-container {
     position: relative;
     display: flex;
@@ -8,12 +10,12 @@
     padding: 8px 0 7px;
   }
 
-  &-menu {
+  &-burger {
     display: none;
     width: 24px;
     height: 24px;
 
-    &__burger {
+    &__icon {
       width: 23.39px;
       height: 19.34px;
     }
@@ -114,16 +116,16 @@
 }
 
 .menu {
+  position: fixed;
+  top: 80px;
   left: 0;
   right: 0;
+  height: 99vh;
   display: none;
-  opacity: 0;
-  visibility: hidden;
-  display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 57px 0 115px;
-  @include animation;
+  padding: 40px 0 115px;
+  overflow: scroll;
 
   &-search {
     display: none;
@@ -150,7 +152,6 @@
 
     &_active {
       display: inline-block;
-      overflow-y: scroll;
     }
   }
 
@@ -199,9 +200,6 @@
 
   &_active {
     display: flex;
-    opacity: 1;
-    visibility: visible;
-    @include animation;
   }
 }
 
@@ -265,14 +263,12 @@
 
 @media (max-width: 992px) {
   .header {
-    height: 63px;
-
     &-container {
       max-width: 700px;
       padding: 33px 0 13px;
     }
 
-    &-menu {
+    &-burger {
       display: block;
     }
 
@@ -316,7 +312,7 @@
       max-width: 576px;
     }
 
-    &-menu {
+    &-burger {
       margin-left: 10px;
     }
   }

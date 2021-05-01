@@ -12,8 +12,8 @@
   <body>
     <header class="header">
       <div class="header-container">
-        <button class="header-menu">
-          <svg class="header-menu__burger">
+        <button class="header-burger" id="menu-burger">
+          <svg class="header-burger__icon">
             <use xlink:href="./images/sprites.svg#burger-header"></use>
           </svg>
         </button><a class="header-logo header__logo" href="#">
@@ -29,7 +29,7 @@
             </svg>
             <input class="header-search__input" placeholder="Search">
           </form>
-          <button class="header-toolbar__look header-toolbar__button header-look">
+          <button class="header-toolbar__look header-toolbar__button header-look" id="search">
             <svg class="header-look__icon header-toolbar__icon">
               <use xlink:href="./images/sprites.svg#search-header"></use>
             </svg>
@@ -46,22 +46,22 @@
           </button>
         </div>
       </div>
-    </header>
-    <div class="menu">
-      <form class="menu-search">
-        <input class="menu-search__input" placeholder="Search">
-      </form>
-      <nav class="menu-links menu__links"><a class="menu-links__item" href="#">Account</a><a class="menu-links__item" href="#">Catalog</a><a class="menu-links__item" href="#">Shipping</a><a class="menu-links__item" href="#">How to choose size</a><a class="menu-links__item" href="#">Inline skates lessons</a><a class="menu-links__item" href="#">About us</a>
-      </nav>
-      <div class="menu-buttons">
-        <button class="button button_primary menu-buttons__login">Log in</button>
-        <button class="button menu-buttons__google">
-          <svg class="menu-buttons__icon">
-            <use xlink:href="./images/sprites.svg#menu-google"></use>
-          </svg>Sign in by Gmail
-        </button>
+      <div class="menu header-menu">
+        <form class="menu-search" id="menu-search">
+          <input class="menu-search__input" placeholder="Search">
+        </form>
+        <nav class="menu-links menu__links"><a class="menu-links__item" href="#">Account</a><a class="menu-links__item" href="#">Catalog</a><a class="menu-links__item" href="#">Shipping</a><a class="menu-links__item" href="#">How to choose size</a><a class="menu-links__item" href="#">Inline skates lessons</a><a class="menu-links__item" href="#">About us</a>
+        </nav>
+        <div class="menu-buttons">
+          <button class="button button_primary menu-buttons__login">Log in</button>
+          <button class="button menu-buttons__google">
+            <svg class="menu-buttons__icon">
+              <use xlink:href="./images/sprites.svg#menu-google"></use>
+            </svg>Sign in by Gmail
+          </button>
+        </div>
       </div>
-    </div>
+    </header>
     <script src="./scripts/main.min.js"></script>
   </body>
 </html>

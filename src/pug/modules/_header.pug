@@ -3,8 +3,8 @@ mixin headerLink(link, className, name)
 
 header.header
   .header-container
-    button.header-menu
-      svg.header-menu__burger
+    button.header-burger#menu-burger
+      svg.header-burger__icon
         use(xlink:href="./images/sprites.svg#burger-header")
 
     a(href="#").header-logo.header__logo
@@ -24,7 +24,7 @@ header.header
           use(xlink:href="./images/sprites.svg#search-header")
         input(placeholder="Search").header-search__input
 
-      button.header-toolbar__look.header-toolbar__button.header-look
+      button.header-toolbar__look.header-toolbar__button.header-look#search
         svg.header-look__icon.header-toolbar__icon
           use(xlink:href="./images/sprites.svg#search-header")
 
@@ -36,23 +36,23 @@ header.header
         svg.header-cart__icon.header-toolbar__icon
           use(xlink:href="./images/sprites.svg#cart-header")
       
-.menu
-  form.menu-search
-    input(placeholder="Search").menu-search__input
+  .menu.header-menu
+    form.menu-search#menu-search
+      input(placeholder="Search").menu-search__input
 
-  nav.menu-links.menu__links
-    +headerLink('#', 'menu-links__item', 'Account')
-    +headerLink('#', 'menu-links__item', 'Catalog')
-    +headerLink('#', 'menu-links__item', 'Shipping')
-    +headerLink('#', 'menu-links__item', 'How to choose size')
-    +headerLink('#', 'menu-links__item', 'Inline skates lessons')
-    +headerLink('#', 'menu-links__item', 'About us')
+    nav.menu-links.menu__links
+      +headerLink('#', 'menu-links__item', 'Account')
+      +headerLink('#', 'menu-links__item', 'Catalog')
+      +headerLink('#', 'menu-links__item', 'Shipping')
+      +headerLink('#', 'menu-links__item', 'How to choose size')
+      +headerLink('#', 'menu-links__item', 'Inline skates lessons')
+      +headerLink('#', 'menu-links__item', 'About us')
 
-  .menu-buttons
-    button.button.button_primary.menu-buttons__login
-      | Log in
+    .menu-buttons
+      button.button.button_primary.menu-buttons__login
+        | Log in
 
-    button.button.menu-buttons__google
-      svg.menu-buttons__icon
-        use(xlink:href="./images/sprites.svg#menu-google")
-      | Sign in by Gmail
+      button.button.menu-buttons__google
+        svg.menu-buttons__icon
+          use(xlink:href="./images/sprites.svg#menu-google")
+        | Sign in by Gmail
