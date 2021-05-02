@@ -32,7 +32,7 @@ block content
         .hero-slider__slide.hero-slide
           .hero-slide__info
             span.hero-slide__surtitle
-              | Best for beginners
+              | Best for General Grivus
             h1.hero-slide__title
               | FR Skates FRX&nbsp;60
             span.hero-slide__subtitle
@@ -47,6 +47,25 @@ block content
 
           img(src="./images/slide1.png").hero-slide__image
         
+        //- Slide 3
+        .hero-slider__slide.hero-slide
+          .hero-slide__info
+            span.hero-slide__surtitle
+              | Best for megatrons
+            h1.hero-slide__title
+              | FR Skates FRX&nbsp;40
+            span.hero-slide__subtitle
+              | in Black and Black
+            p.hero-slide__description
+              | One of the best freeride skates in the World! 
+              | Great&nbsp;comfrtable liners, special premium insoles and wheels.
+            a(href="#").button.button_primary.hero-slide__button.hero-button
+              span.hero-button__text
+                | Learn more
+              img(src="./images/arrow.svg")
+
+          img(src="./images/slide1.png").hero-slide__image
+
         //- Slider navigation
         .slider-navigation
           button.slider-navigation__button.slider-navigation__button_prev
@@ -54,9 +73,9 @@ block content
               use(xlink:href="./images/sprites.svg#arrow")
 
           ul.slider-navigation__pagination.slider-pagination
-            li.slider-pagination__dot.slider-pagination__dot_active
-            li.slider-pagination__dot
-            li.slider-pagination__dot
+            //- li.slider-pagination__dot.slider-pagination__dot_active
+            //- li.slider-pagination__dot
+            //- li.slider-pagination__dot
 
           button.slider-navigation__button.slider-navigation__button_next
             svg.slider-navigation__arrow
