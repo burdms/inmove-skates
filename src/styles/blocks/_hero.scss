@@ -17,6 +17,7 @@
       width: 710px;
       height: 525px;
       background: url("../images/hero-background_desktop.png") no-repeat;
+      background-size: contain;
     }
   }
 
@@ -69,6 +70,9 @@
       position: absolute;
       top: -43px;
       right: -27px;
+      width: 405px;
+      height: 405px;
+      object-fit: cover;
     }
   }
 
@@ -105,6 +109,7 @@
       fill: $color-dark-grey;
       width: 24px;
       height: 24px;
+      @include animation;
 
       &_prev {
         transform: rotate(180deg);
@@ -126,6 +131,7 @@
       border-radius: 50%;
       border: 1.5px solid $color-dark-grey;
       cursor: pointer;
+      @include animation;
 
       &_active {
         background-color: $color-dark-grey;
@@ -138,12 +144,23 @@
   }
 }
 
+// Hover effects
 @media (min-width: 993px) {
+  .hero {
+    &-slide {
+      &__button:hover {
+        background-color: $color-primary_hover;
+        @include animation;
+      }
+    }
+  }
+
   .slider {
     &-navigation {
       &__button:hover {
         .slider-navigation__arrow {
           fill: $color-dark-grey_hover;
+          @include animation;
         }
       }
     }
@@ -153,7 +170,153 @@
         &:hover {
           border-color: $color-dark-grey_hover;
           background-color: $color-dark-grey_hover;
+          @include animation;
         }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 1300px) {
+  .hero {
+    &-slider {
+      &::before {
+        top: 80px;
+        right: 0;
+        width: 500px;
+        height: 370px;
+      }
+    }
+
+    &-slide {
+      &__image {
+        right: 20px;
+        width: 380px;
+        height: 380px;
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    &-slider {
+      padding: 80px 0;
+
+      &::before {
+        top: 120px;
+        right: 0;
+        width: 400px;
+        height: 296px;
+      }
+    }
+
+    &-slide {
+      &__surtitle {
+        @include fontSize(18px, 22px);
+      }
+
+      &__title {
+        @include fontSize(45px, 55px);
+      }
+
+      &__subtitle {
+        @include fontSize(20px, 24px);
+      }
+
+      &__description {
+        max-width: 320px;
+      }
+
+      &__image {
+        top: 20px;
+        right: 0;
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    &-slider {
+      &::before {
+        top: 340px;
+        right: 50%;
+        transform: translateX(52%);
+        width: 309px;
+        height: 389px;
+        background: url("../images/hero-background_mobile.png") no-repeat;
+      }
+    }
+
+    &-slide {
+      display: flex;
+      flex-direction: column;
+
+      &__info {
+        margin-bottom: 38px;
+      }
+
+      &__image {
+        align-self: center;
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 300px;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    &-slider {
+      padding: 51px 0 15px;
+
+      &__slide {
+        margin-bottom: 38px;
+      }
+
+      &::before {
+        top: auto;
+        bottom: 70px;
+      }
+    }
+
+    &-slide {
+      &__info {
+        margin-bottom: 60px;
+      }
+
+      &__surtitle {
+        margin-bottom: 3px;
+      }
+
+      &__title {
+        margin-bottom: 1px;
+      }
+
+      &__subtitle {
+        margin-bottom: 37px;
+      }
+
+      &__description {
+        display: none;
+      }
+
+      &__button {
+        margin-left: -6px;
+        width: 195px;
+        padding: 15px 33px;
+      }
+
+      &__image {
+        width: 241px;
+        height: 241px;
       }
     }
   }
