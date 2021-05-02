@@ -3,8 +3,11 @@ extends pug/layout/head
 block variables
   - var pageTitle = 'InMove Skates'
 
+mixin advantagesItem(title, description)
+  li.advantages-list__item.advantages-item
+    .advantages-item__title= title
+    span.advantages-item__description= description
 
-  
 block content
   main.hero
     .container
@@ -26,7 +29,7 @@ block content
                 | Learn more
               img(src="./images/arrow.svg")
 
-          img(src="./images/slide1.png").hero-slide__image
+          img(src="./images/slide1.png" alt="Изображение роликовых коньков").hero-slide__image
 
         //- Slide 2
         .hero-slider__slide.hero-slide
@@ -45,7 +48,7 @@ block content
                 | Learn more
               img(src="./images/arrow.svg")
 
-          img(src="./images/slide1.png").hero-slide__image
+          img(src="./images/slide1.png" alt="Изображение роликовых коньков").hero-slide__image
         
         //- Slide 3
         .hero-slider__slide.hero-slide
@@ -64,7 +67,7 @@ block content
                 | Learn more
               img(src="./images/arrow.svg")
 
-          img(src="./images/slide1.png").hero-slide__image
+          img(src="./images/slide1.png" alt="Изображение роликовых коньков").hero-slide__image
 
         //- Slider navigation
         .slider-navigation
@@ -73,11 +76,14 @@ block content
               use(xlink:href="./images/sprites.svg#arrow")
 
           ul.slider-navigation__pagination.slider-pagination
-            //- li.slider-pagination__dot.slider-pagination__dot_active
-            //- li.slider-pagination__dot
-            //- li.slider-pagination__dot
 
           button.slider-navigation__button.slider-navigation__button_next
             svg.slider-navigation__arrow
               use(xlink:href="./images/sprites.svg#arrow")
-        
+
+  .advantages
+    .container
+      ul.advantages-list
+        +advantagesItem("FREE SHIPPING IN THE USA", "order over $50")
+        +advantagesItem("RETURN IF YOU DON’T LIKE", "30 days")
+        +advantagesItem("WAREHOUSE", "in Philadelhia")
