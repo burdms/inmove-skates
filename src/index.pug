@@ -8,6 +8,9 @@ mixin advantagesItem(title, description)
     .advantages-item__title= title
     span.advantages-item__description= description
 
+mixin categoriesLinks(name)
+  a(href="#").button.categories-links__item= name
+
 block content
   main.hero
     .container
@@ -29,7 +32,7 @@ block content
                 | Learn more
               img(src="./images/arrow.svg")
 
-          img(src="./images/slide1.png" alt="Изображение роликовых коньков").hero-slide__image
+          img(src="./images/slide1.png" alt="Skates image").hero-slide__image
 
         //- Slide 2
         .hero-slider__slide.hero-slide
@@ -48,7 +51,7 @@ block content
                 | Learn more
               img(src="./images/arrow.svg")
 
-          img(src="./images/slide1.png" alt="Изображение роликовых коньков").hero-slide__image
+          img(src="./images/slide1.png" alt="Skates image").hero-slide__image
         
         //- Slide 3
         .hero-slider__slide.hero-slide
@@ -67,7 +70,7 @@ block content
                 | Learn more
               img(src="./images/arrow.svg")
 
-          img(src="./images/slide1.png" alt="Изображение роликовых коньков").hero-slide__image
+          img(src="./images/slide1.png" alt="Skates image").hero-slide__image
 
         //- Slider navigation
         .slider-navigation
@@ -87,3 +90,58 @@ block content
         +advantagesItem("FREE SHIPPING IN THE USA", "order over $50")
         +advantagesItem("RETURN IF YOU DON’T LIKE", "30 days")
         +advantagesItem("WAREHOUSE", "in Philadelhia")
+
+  section.categories
+    .container.container_body
+      h2.categories__title Categories
+      
+      .categories-links.categories__links
+        +categoriesLinks("Skates")
+        +categoriesLinks("Protection")
+        +categoriesLinks("Wheels")
+        +categoriesLinks("Accessories")
+        +categoriesLinks("Backpack")
+
+      .categories-brands.categories__brands
+        a(href="#").categories-brands__link
+          img(src="./images/brands-logo-1.png" alt="Rollerblade logo").categories-brands__logo
+        a(href="#").categories-brands__link
+          img(src="./images/brands-logo-2.png" alt="KS logo").categories-brands__logo
+        a(href="#").categories-brands__link
+          img(src="./images/brands-logo-3.png" alt="Powerslide logo").categories-brands__logo
+        a(href="#").categories-brands__link
+          img(src="./images/brands-logo-4.png" alt="Matter logo").categories-brands__logo
+        a(href="#").categories-brands__link
+          img(src="./images/brands-logo-5.png" alt="FR Skates logo").categories-brands__logo
+        a(href="#").categories-brands__link
+          img(src="./images/brands-logo-6.png" alt="UO Matter logo").categories-brands__logo
+      
+      .categories-types.categories__types
+        .categories-types__card.categories-types__card_main
+          h3.categories-types__title.categories-types__title_main
+            | Skates
+          a(href="#").categories-types__link.categories-types__link_main
+            | Learn more
+            svg.categories-types__arrow.categories-types__arrow_main
+              use(xlink:href="./images/sprites.svg#arrow")
+          img(src="./images/types-1.png" alt="Skates photo").categories-types__image.categories-types__image_main
+        
+        .categories-types__secondary
+          .categories-types__card.categories-types__card_top
+            h3.categories-types__title.categories-types__title_wheels
+              | Wheels
+            a(href="#").categories-types__link
+              | Learn more
+              svg.categories-types__arrow
+                use(xlink:href="./images/sprites.svg#arrow")
+            img(src="./images/types-2.png" alt="Wheels photo").categories-types__image.categories-types__image_top
+          
+          .categories-types__card.categories-types__card_bottom
+            h3.categories-types__title
+              | Protection
+            a(href="#").categories-types__link
+              | Learn more
+              svg.categories-types__arrow
+                use(xlink:href="./images/sprites.svg#arrow")
+            img(src="./images/types-3.png" alt="Protection photo").categories-types__image.categories-types__image_bottom
+

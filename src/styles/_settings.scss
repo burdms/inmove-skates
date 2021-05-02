@@ -7,6 +7,7 @@ body {
   @include fontStyling(500);
   color: $color-body;
   background-color: #fff;
+  cursor: url("../cursor.cur"), auto;
 }
 
 img {

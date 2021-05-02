@@ -1,0 +1,260 @@
+.categories {
+  padding: 60px 0 122px;
+
+  &-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__item {
+      padding: 0;
+      width: 162px;
+      min-width: auto;
+      height: 46px;
+      @include fontSize(14px, 17px);
+      color: $color-categories;
+      @include animation;
+    }
+  }
+
+  &-brands {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 145px;
+      height: 127px;
+      border: 1px solid $color-input;
+      border-radius: 25px;
+      @include animation;
+    }
+
+    &__logo {
+      mix-blend-mode: darken;
+    }
+  }
+
+  &-types {
+    display: flex;
+    justify-content: space-between;
+
+    &__secondary {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    &__card {
+      position: relative;
+      width: 485px;
+      height: 158px;
+      padding: 30px 43px;
+      border-radius: $border-radius;
+
+      &_main {
+        height: 347px;
+        padding: 65px 51px;
+        background: url("../images/types-blob-main.png") no-repeat;
+        background-position: right 55px top 40px;
+        background-color: #f5f5f5;
+      }
+
+      &_top {
+        background: url("../images/types-blob-top.png") no-repeat;
+        background-position: right 65px top 5px;
+        background-color: $color-grey;
+      }
+
+      &_bottom {
+        background: url("../images/types-blob-bottom.png") no-repeat;
+        background-position: right 37px top -4px;
+        background-color: $color-grey;
+      }
+    }
+
+    &__title {
+      margin-bottom: 5px;
+      @include fontStyling(700);
+      @include fontSize(55px, 67px);
+      color: $color-categories;
+
+      &_main {
+        margin-bottom: 12px;
+        @include fontSize(65px, 69px);
+      }
+
+      &_wheels {
+        margin-left: 20px;
+      }
+    }
+
+    &__link {
+      margin-left: 28px;
+      display: flex;
+      align-items: center;
+      font-family: Roboto, sans-serif;
+      @include fontSize(14px, 16px);
+      @include animation;
+
+      &_main {
+        margin-left: 0;
+        @include fontSize(16px, 19px);
+        @include fontStyling(400);
+      }
+    }
+
+    &__image {
+      position: absolute;
+
+      &_main {
+        top: -8px;
+        right: -25px;
+      }
+
+      &_top {
+        top: -20px;
+        right: 69px;
+      }
+
+      &_bottom {
+        top: 3px;
+        right: 23px;
+      }
+    }
+
+    &__arrow {
+      margin-left: 17px;
+      fill: $color-body;
+      width: 17px;
+      height: 17px;
+      @include animation;
+    }
+  }
+
+  // Blocks as elements
+  &__title {
+    display: none;
+    @include fontSize(22px, 27px);
+    @include fontStyling(700);
+    color: #000;
+  }
+
+  &__links {
+    margin-bottom: 47px;
+  }
+
+  &__brands {
+    margin-bottom: 53px;
+  }
+
+  // Hover effects
+  @media (min-width: 993px) {
+    &-links {
+      &__item:hover {
+        color: #fff;
+        background-color: $color-primary;
+        text-decoration: underline;
+        @include animation;
+      }
+    }
+
+    &-brands {
+      &__link:hover {
+        background-color: $color-footer;
+        border-color: $color-footer;
+        @include animation;
+      }
+    }
+
+    &-types {
+      &__link:hover {
+        color: #6112b5;
+        text-decoration: underline;
+        @include animation;
+
+        .categories-types__arrow {
+          fill: #6112b5;
+          @include animation;
+        }
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 992px) {
+    &-links {
+      justify-content: center;
+      &__item {
+        margin: 0 23px 16px;
+      }
+    }
+
+    &-brands {
+      justify-content: center;
+      &__link {
+        margin: 0 16px 23px;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 31px 0 79px;
+
+    &-links {
+      &__item {
+        margin: 0 8px 16px;
+      }
+    }
+
+    &__title {
+      display: block;
+      text-align: center;
+      margin-bottom: 27px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    &-links {
+      margin-bottom: 32px;
+      justify-content: space-between;
+
+      &__item {
+        margin: 0 0 16px;
+
+        &:last-child {
+          margin: 0 auto;
+        }
+      }
+    }
+
+    &-brands {
+      justify-content: space-between;
+
+      &__link {
+        margin: 0 0 18px;
+        width: 101px;
+        height: 88px;
+      }
+
+      &__logo {
+        object-fit: scale-down;
+        width: 70%;
+      }
+    }
+  }
+
+  @media (max-width: 370px) {
+    &-links {
+      justify-content: center;
+
+      &__item {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+}
