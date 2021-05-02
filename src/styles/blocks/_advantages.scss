@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: space-between;
     margin: 0 auto;
-    padding: 67px 45px;
+    padding: 47px 64px 43px 69px;
     width: 672px;
     border-radius: 25px;
     background-color: $color-grey;
@@ -16,6 +16,10 @@
       align-items: center;
       flex-direction: column;
       max-width: 131px;
+
+      &:nth-child(2) {
+        margin-left: -23px;
+      }
     }
   }
 
@@ -25,6 +29,7 @@
       align-items: center;
       height: 40px;
       margin-bottom: 14px;
+      text-transform: uppercase;
       @include fontStyling(700);
       @include fontSize(16px, 20px);
       text-align: center;
@@ -36,6 +41,72 @@
       @include fontSize(14px, 17px);
       text-align: center;
       color: #a2a2a2;
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 767px) {
+  .advantages {
+    margin-top: 22px;
+
+    &-list {
+      width: 100%;
+      padding: 18px 24px 22px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .advantages {
+    &-list {
+      &__item {
+        &:nth-child(2) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    &-item {
+      &__title {
+        margin-bottom: 4px;
+        @include fontSize(14px, 16px);
+      }
+
+      &__description {
+        @include fontSize(12px, 14px);
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .advantages {
+    &-list {
+      &__item {
+        max-width: 82px;
+      }
+    }
+
+    &-item {
+      &__title {
+        margin-bottom: 0;
+        @include fontSize(10px, 12px);
+      }
+
+      &__description {
+        @include fontSize(9px, 11px);
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .advantages {
+    &-item {
+      &__title {
+        @include fontSize(9px, 11px);
+      }
     }
   }
 }

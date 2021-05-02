@@ -31,5 +31,9 @@
   @media (max-width: 767px) {
     max-width: 576px;
     width: 81%;
+
+    &_body {
+      width: 90%;
+    }
   }
 }
