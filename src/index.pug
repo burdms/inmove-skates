@@ -9,8 +9,8 @@ block content
   main.hero
     .container
       .hero-slider.slider
-        .hero-slider__slide.hero-slide
-          //- Slide 1
+        //- Slide 1
+        .hero-slider__slide.hero-slide.hero-slider__slide_active
           .hero-slide__info
             span.hero-slide__surtitle
               | Best for beginners
@@ -18,6 +18,25 @@ block content
               | FR Skates FRX&nbsp;80
             span.hero-slide__subtitle
               | in Black and Orange
+            p.hero-slide__description
+              | One of the best freeride skates in the World! 
+              | Great&nbsp;comfrtable liners, special premium insoles and wheels.
+            a(href="#").button.button_primary.hero-slide__button.hero-button
+              span.hero-button__text
+                | Learn more
+              img(src="./images/arrow.svg")
+
+          img(src="./images/slide1.png").hero-slide__image
+
+        //- Slide 2
+        .hero-slider__slide.hero-slide
+          .hero-slide__info
+            span.hero-slide__surtitle
+              | Best for beginners
+            h1.hero-slide__title
+              | FR Skates FRX&nbsp;60
+            span.hero-slide__subtitle
+              | in Orange and Black
             p.hero-slide__description
               | One of the best freeride skates in the World! 
               | Great&nbsp;comfrtable liners, special premium insoles and wheels.
