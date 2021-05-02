@@ -54,6 +54,7 @@
       height: 158px;
       padding: 30px 43px;
       border-radius: $border-radius;
+      overflow: hidden;
 
       &_main {
         height: 347px;
@@ -199,10 +200,21 @@
         margin: 0 16px 23px;
       }
     }
+
+    &-types {
+      flex-direction: column;
+      align-items: center;
+
+      &__card {
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
   }
 
   @media (max-width: 767px) {
-    padding: 31px 0 79px;
+    padding: 31px 0 71px;
 
     &-links {
       &__item {
@@ -214,6 +226,67 @@
       display: block;
       text-align: center;
       margin-bottom: 27px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    &-types {
+      &__card {
+        width: 100%;
+        height: 178px;
+
+        &_main {
+          height: 228px;
+          background-position: right 24px top 19px;
+          background-size: 190px;
+        }
+
+        &_top {
+          background-position: right 2px top 26px;
+          background-size: 165px;
+        }
+
+        &_bottom {
+          background-position: right 10px top 10px;
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 13px;
+        }
+      }
+
+      &__secondary {
+        width: 100%;
+      }
+
+      &__title {
+        @include fontSize(45px, 55px);
+        margin-bottom: 5px;
+      }
+
+      &__image {
+        &_main {
+          width: 230px;
+          top: -14px;
+          right: -30px;
+        }
+
+        &_top {
+          width: 160px;
+          top: 2px;
+          right: 4px;
+        }
+
+        &_bottom {
+          top: 37px;
+          right: 12px;
+          width: 131px;
+        }
+      }
+    }
+
+    &__brands {
+      margin-bottom: 16px;
     }
   }
 
@@ -245,6 +318,35 @@
         width: 70%;
       }
     }
+
+    &-types {
+      &__card {
+        &_main {
+          padding: 42px 42px;
+        }
+
+        &_top {
+          padding: 40px 31px;
+        }
+
+        &_bottom {
+          display: none;
+        }
+      }
+
+      &__title {
+        &_wheels {
+          margin-left: 3px;
+        }
+      }
+
+      &__link {
+        margin-left: 10px;
+      }
+
+      &__image {
+      }
+    }
   }
 
   @media (max-width: 370px) {
@@ -254,6 +356,30 @@
       &__item {
         margin-left: 10px;
         margin-right: 10px;
+      }
+    }
+
+    &-types {
+      &__card {
+        padding-left: 15px;
+
+        &_main {
+          background-position: right 0px top 19px;
+        }
+      }
+
+      &__image {
+        &_main {
+          width: 200px;
+          top: 10px;
+          right: -20px;
+        }
+
+        &_top {
+          width: 130px;
+          top: 25px;
+          right: 0px;
+        }
       }
     }
   }
