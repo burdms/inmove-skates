@@ -41,6 +41,14 @@
     text-align: center;
   }
 
+  // Hover effects
+  @media (min-width: 993px) {
+    &__link:hover {
+      color: $color-primary;
+    }
+  }
+
+  // Responsive styles
   @media (max-width: 992px) {
     padding-bottom: 95px;
     min-height: auto;

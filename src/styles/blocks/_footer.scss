@@ -31,6 +31,7 @@
 .footer {
   &-company {
     &__logo {
+      display: block;
       margin-left: 41px;
       margin-bottom: 27px;
     }
@@ -148,6 +149,8 @@
       min-width: auto;
       width: 126px;
       height: 33px;
+      @include fontSize(14px, 17px);
+      @include fontStyling(600);
       @include animation;
     }
 
@@ -398,6 +401,7 @@
 
       &__link {
         margin: 0;
+        @include fontSize(12px, 15px);
       }
     }
 

@@ -99,3 +99,8 @@ gulp.task(
     gulp.parallel('watch', 'serve')
   )
 );
+
+gulp.task(
+  'build',
+  gulp.series('clean', 'resources', gulp.parallel('pug', 'js'), 'sass')
+);

@@ -1,5 +1,5 @@
 .bestsellers {
-  min-height: 627px;
+  min-height: 612px;
 
   &-cards {
     display: flex;
@@ -21,6 +21,13 @@
     @include sectionLink;
     @include fontSize(14px, 16px);
     text-align: center;
+  }
+
+  // Hover effects
+  @media (min-width: 993px) {
+    &__link:hover {
+      color: $color-primary;
+    }
   }
 
   // Responsive styles
