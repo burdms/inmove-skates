@@ -63,12 +63,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
       const target = event.target;
 
-      if (!(currentSlide <= 0) && !(currentSlide >= slides.length - 1)) {
-        document
-          .querySelectorAll('.slider-navigation__button')
-          .forEach((item) => {
-            item.classList.remove('slider-navigation__button_last');
-          });
+      function lastSlide() {
+        if (!(currentSlide <= 0)) {
+          document
+            .querySelector('.slider-navigation__button_prev')
+            .classList.remove('slider-navigation__button_last');
+        }
+
+        if (!(currentSlide >= slides.length - 1)) {
+          document
+            .querySelector('.slider-navigation__button_next')
+            .classList.remove('slider-navigation__button_last');
+        }
       }
 
       if (
@@ -87,12 +93,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
       if (target.closest('.slider-navigation__button_next')) {
         currentSlide++;
+        lastSlide();
       } else if (target.closest('.slider-navigation__button_prev')) {
         currentSlide--;
+        lastSlide();
       } else if (target.matches('.slider-pagination__dot')) {
         dots.forEach((item, index) => {
           if (item === target) {
             currentSlide = index;
+            lastSlide();
           }
         });
       }

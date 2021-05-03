@@ -8,6 +8,12 @@
   font-style: $style;
 }
 
+@mixin sectionTitle {
+  font-family: Roboto, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 @mixin animation {
   transition: all ease-out 0.2s;
 }

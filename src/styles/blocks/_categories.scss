@@ -97,7 +97,7 @@
       margin-left: 28px;
       display: flex;
       align-items: center;
-      font-family: Roboto, sans-serif;
+      @include sectionTitle;
       @include fontSize(14px, 16px);
       @include animation;
 

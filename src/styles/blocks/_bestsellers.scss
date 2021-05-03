@@ -18,9 +18,8 @@
   &__link {
     display: block;
     margin-bottom: 34px;
-    font-family: Roboto, sans-serif;
+    @include sectionTitle;
     @include fontSize(14px, 16px);
-    @include fontStyling(400);
     text-align: center;
   }
 
