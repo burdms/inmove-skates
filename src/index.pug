@@ -18,7 +18,7 @@ mixin productCard(className, product, tag)
       img(src="./images/zoom.svg" alt="Zoom icon").product-zoom__icon
     if (tag)
       span.product__tag= product.tag
-    img(src="./images/" + product.image).product__image
+    img(src="./images/" + product.image, alt= product.alt).product__image
     h3.product__title= product.name
     span.product__description= product.description
     .product-pricing
@@ -57,7 +57,7 @@ block content
             a(href="#").button.button_primary.hero-slide__button.hero-button
               span.hero-button__text
                 | Learn more
-              img(src="./images/arrow.svg")
+              img(src="./images/arrow.svg" alt="Arrow icon")
 
           img(src="./images/slide1.png" alt="Skates image").hero-slide__image
 
@@ -76,7 +76,7 @@ block content
             a(href="#").button.button_primary.hero-slide__button.hero-button
               span.hero-button__text
                 | Learn more
-              img(src="./images/arrow.svg")
+              img(src="./images/arrow.svg" alt="Arrow icon")
 
           img(src="./images/slide1.png" alt="Skates image").hero-slide__image
         
@@ -95,7 +95,7 @@ block content
             a(href="#").button.button_primary.hero-slide__button.hero-button
               span.hero-button__text
                 | Learn more
-              img(src="./images/arrow.svg")
+              img(src="./images/arrow.svg" alt="Arrow icon")
 
           img(src="./images/slide1.png" alt="Skates image").hero-slide__image
 
@@ -181,10 +181,10 @@ block content
         | Learn more
       
       .bestsellers-cards
-        +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png'})
-        +productCard('bestsellers-cards__item',{'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'tag': '-10%'}, true)
-        +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png'})
-        +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png'})
+        +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'alt': 'Skates photo'})
+        +productCard('bestsellers-cards__item',{'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'alt': 'Skates photo', 'tag': '-10%'}, true)
+        +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'alt': 'Skates photo'})
+        +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'alt': 'Skates photo'})
 
   section.special
     .container.container_body
@@ -200,7 +200,7 @@ block content
         a(href="#").button.button_primary.special-info__link.special-link
           span.special-link__text
             | Learn more
-          img(src="./images/arrow.svg")
+          img(src="./images/arrow.svg" alt="Arrow icon")
 
   section.new
     .container.container_body
@@ -210,4 +210,8 @@ block content
         | Learn more
         
       .new-wrapper
-        .new-cards
+        .new-cards.new__cards
+          +productCard('new-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'alt': 'Skates photo'})
+          +productCard('new-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'alt': 'Skates photo'})
+
+        .new-primary

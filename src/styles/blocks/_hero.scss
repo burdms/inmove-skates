@@ -9,10 +9,12 @@
     &__slide {
       opacity: 0;
       @include animation;
+      pointer-events: none;
 
       &_active {
         opacity: 1;
         @include animation;
+        pointer-events: auto;
       }
     }
 
