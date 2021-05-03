@@ -159,6 +159,41 @@
   }
 }
 
+// Footer-bottom
+.footer {
+  &-bottom {
+    background-color: $color-footer;
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+      @include fontSize(12px, 15px);
+      @include fontStyling(400);
+      color: #000;
+    }
+
+    &__copywrite {
+      margin-left: 12px;
+    }
+  }
+
+  &-copywrite {
+    &__sign {
+      margin-right: 8px;
+    }
+  }
+
+  &-links {
+    &__item {
+      &:not(:last-child) {
+        margin-right: 59px;
+      }
+    }
+  }
+}
+
 // Hover effects
 @media (min-width: 993px) {
   .footer {
@@ -201,6 +236,12 @@
       &__link:hover {
         background-color: $color-primary_hover;
         @include animation;
+      }
+    }
+
+    &-links {
+      &__item:hover {
+        color: $color-primary;
       }
     }
   }
@@ -402,6 +443,30 @@
     &-info {
       &__title {
         @include fontSize(12px, 15px);
+      }
+    }
+
+    &-bottom {
+      &__wrapper {
+        @include fontSize(10px, 12px);
+      }
+
+      &__copywrite {
+        margin-left: -14px;
+      }
+
+      &__links {
+        margin-right: -6px;
+      }
+    }
+
+    &-links {
+      color: $color-body;
+
+      &__item {
+        &:not(:last-child) {
+          margin-right: 12px;
+        }
       }
     }
   }
