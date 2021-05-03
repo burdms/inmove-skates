@@ -1,0 +1,422 @@
+// General footer styles
+.footer {
+  &-container {
+    max-width: 1063px;
+    margin: 0 auto;
+  }
+
+  &-top {
+    padding: 60px 0 72px;
+    @include fontSize(12px, 15px);
+    @include fontStyling(400);
+    color: #000;
+    background-color: #f0f0f0;
+
+    &__wrapper {
+      display: flex;
+    }
+  }
+
+  &__company {
+    margin-right: 47px;
+  }
+
+  &__nav {
+    margin-top: 22px;
+    margin-right: 114px;
+  }
+}
+
+// Footer-top company part
+.footer {
+  &-company {
+    &__logo {
+      margin-left: 41px;
+      margin-bottom: 27px;
+    }
+
+    &__address {
+      margin-bottom: 17px;
+      margin-left: 12px;
+      max-width: 230px;
+    }
+
+    &__timetable {
+      margin-left: 11px;
+      margin-bottom: 20px;
+    }
+  }
+
+  &-socials {
+    display: flex;
+    align-items: center;
+    margin-left: 17px;
+
+    &__item {
+      width: 29px;
+      height: 29px;
+
+      &_facebook {
+        background: url("../images/socials/facebook.svg") no-repeat;
+        background-size: cover;
+      }
+
+      &_instagram {
+        background: url("../images/socials/instagram.svg") no-repeat;
+        background-size: cover;
+      }
+
+      &_youtube {
+        background: url("../images/socials/youtube.svg") no-repeat;
+        background-size: cover;
+      }
+
+      &_telegram {
+        background: url("../images/socials/telegram.svg") no-repeat;
+        background-size: cover;
+      }
+
+      &:not(:last-child) {
+        margin-right: 19px;
+      }
+    }
+  }
+}
+
+// Footer-top nav part
+.footer {
+  &-nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__list {
+      @include fontStyling(700);
+
+      &_information {
+        margin-right: 119px;
+      }
+
+      &_catalog {
+        margin-right: 101px;
+      }
+
+      &_contacts {
+        display: none;
+      }
+    }
+
+    &__item {
+      @include fontStyling(400);
+
+      &_contacts {
+        max-width: 157px;
+      }
+
+      &:first-child {
+        margin-top: 22px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+// Footer-top info part
+.footer {
+  &-info {
+    text-align: center;
+
+    &__question {
+      margin-top: 58px;
+      margin-bottom: 50px;
+    }
+
+    &__title {
+      margin-bottom: 14px;
+      @include fontSize(14px, 17px);
+      @include fontStyling(600);
+    }
+
+    &__link {
+      margin: 0 auto;
+      min-width: auto;
+      width: 126px;
+      height: 33px;
+    }
+
+    &__payments {
+      width: 117px;
+      height: 61px;
+      object-fit: cover;
+    }
+  }
+}
+
+// Hover effects
+@media (min-width: 993px) {
+  .footer {
+    &-socials {
+      &__item {
+        &_facebook {
+          &:hover {
+            background: url("../images/socials/facebook_hover.svg") no-repeat;
+          }
+        }
+
+        &_instagram {
+          &:hover {
+            background: url("../images/socials/instagram_hover.svg") no-repeat;
+          }
+        }
+
+        &_youtube {
+          &:hover {
+            background: url("../images/socials/youtube_hover.svg") no-repeat;
+          }
+        }
+
+        &_telegram {
+          &:hover {
+            background: url("../images/socials/telegram_hover.svg") no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Responsive styles
+@media (max-width: 1200px) {
+  .footer {
+    &-container {
+      max-width: 992px;
+    }
+
+    &-top {
+      &__wrapper {
+        justify-content: space-between;
+      }
+    }
+
+    &-company {
+      &__address {
+        margin-left: 0;
+      }
+
+      &__timetable {
+        margin-left: 0;
+      }
+    }
+
+    &__company,
+    &__nav {
+      margin-right: 0;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .footer {
+    &-container {
+      max-width: 700px;
+    }
+
+    &-top {
+      &__wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    &-company {
+      flex-basis: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__logo {
+        margin-bottom: 21px;
+      }
+
+      &__address {
+        display: none;
+      }
+
+      &__timetable {
+        display: none;
+      }
+    }
+
+    &-nav {
+      flex-basis: 100%;
+      justify-content: space-between;
+
+      &__list {
+        margin-right: 0;
+
+        &_contacts {
+          display: block;
+        }
+      }
+    }
+
+    &-info {
+      flex-basis: 100%;
+
+      &__question {
+        margin-top: 0;
+      }
+    }
+
+    &__company {
+      margin-bottom: 33px;
+    }
+
+    &__nav {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    &-top {
+      padding: 30px 0 32px;
+    }
+
+    &-container {
+      max-width: 576px;
+      width: 87.5%;
+    }
+
+    &-company {
+      &__logo {
+        margin-left: 27px;
+        width: 136px;
+      }
+    }
+
+    &-socials {
+      margin-left: 0;
+
+      &__item {
+        width: 33px;
+        height: 34px;
+
+        &:not(:last-child) {
+          margin-right: 23px;
+        }
+      }
+    }
+
+    &-nav {
+      &__list {
+        margin-bottom: 27px;
+      }
+
+      &__item {
+        &_contacts {
+          @include fontSize(10px, 12px);
+        }
+
+        &:not(:last-child) {
+          margin-bottom: 14px;
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      justify-content: center;
+
+      &__question {
+        margin-bottom: 0;
+        margin-right: 76px;
+      }
+
+      &__link {
+        margin: 0;
+      }
+    }
+
+    &__company {
+      margin-bottom: 11px;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .footer {
+    &-nav {
+      flex-basis: 75%;
+      justify-content: start;
+
+      &__list {
+        &_information {
+          margin-right: 75px;
+        }
+
+        &_contacts {
+          margin-right: 55px;
+        }
+
+        &:nth-child(odd) {
+          margin-left: 16px;
+        }
+      }
+
+      &__item {
+        &_contacts {
+          &:first-child {
+            margin-bottom: 22px;
+          }
+        }
+      }
+    }
+
+    &-info {
+      &__title {
+        @include fontSize(12px, 15px);
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .footer {
+    &-nav {
+      flex-basis: 100%;
+
+      &__list {
+        &:nth-child(odd) {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 370px) {
+  .footer {
+    &-nav {
+      justify-content: center;
+
+      &__list {
+        flex-basis: 100%;
+        margin-left: 24%;
+
+        &:nth-child(odd) {
+          margin-left: 24%;
+        }
+      }
+    }
+
+    &-info {
+      &__question {
+        margin-right: 25px;
+      }
+    }
+  }
+}

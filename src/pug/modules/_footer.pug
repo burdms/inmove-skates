@@ -1,0 +1,69 @@
+mixin socialItems(icon, link)
+  a(href= link, target="_blank", class="footer-socials__item_" + icon).footer-socials__item
+
+mixin navItems(text, link)
+  li.footer-nav__item
+    if (link)
+      a(href= link).footer-nav__link= text
+    else
+      a(href="#!").footer-nav__link= text
+
+footer.footer
+  .footer-top
+    .footer-container
+      .footer-top__wrapper
+        .footer-company.footer__company
+          img(src="./images/logo-footer.svg" alt="Logo").footer-company__logo
+          p.footer-company__address
+            | Philadelphia, PA, United States 19151 (online store only)
+          p.footer-company__timetable
+            | 10:00 AM - 8:00 PM
+          .footer-socials
+            +socialItems('facebook', 'https://www.facebook.com/')
+            +socialItems('instagram', 'https://www.instagram.com/')
+            +socialItems('youtube', 'https://www.youtube.com/')
+            +socialItems('telegram', 'https://t.me/InMoveSkates')
+
+        nav.footer-nav.footer__nav
+          ul.footer-nav__list.footer-nav__list_information
+            | Information
+            +navItems('Wholesales (for stores)')
+            +navItems('About us')
+            +navItems('Shipping')
+            +navItems('How to choose size')
+            +navItems('Inline skates lessons')
+          
+          ul.footer-nav__list.footer-nav__list_catalog
+            | Catalog
+            +navItems('Skates')
+            +navItems('Protection')
+            +navItems('Wheels')
+            +navItems('Accessories')
+            +navItems('Backpack')
+            +navItems('Brands')
+
+          .footer-nav__list.footer-nav__list_contacts
+            | Contacts
+            p.footer-nav__item.footer-nav__item_contacts
+              | Philadelphia, PA, United States 19151
+              br 
+              | (online store only)
+            p.footer-nav__item.footer-nav__item_contacts
+              | 10:00 AM - 8:00 PM
+          
+          ul.footer-nav__list.footer-nav__list_account
+            | My account
+            +navItems('Order history')
+            +navItems('Returns')
+            +navItems('Newsletter')
+
+        .footer-info.footer__info
+          .footer-info__question
+            h3.footer-info__title
+              | Still have a question?
+            a(href="#").button.button_primary.footer-info__link
+              | Message us
+          img(src="./images/payments-card.png" alt="Payment types").footer-info__payments
+
+  .footer-bottom
+    .footer-container
