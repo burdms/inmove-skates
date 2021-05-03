@@ -107,6 +107,7 @@
 
     &__item {
       @include fontStyling(400);
+      @include animation;
 
       &_contacts {
         max-width: 157px;
@@ -144,6 +145,7 @@
       min-width: auto;
       width: 126px;
       height: 33px;
+      @include animation;
     }
 
     &__payments {
@@ -182,6 +184,20 @@
             background: url("../images/socials/telegram_hover.svg") no-repeat;
           }
         }
+      }
+    }
+
+    &-nav {
+      &__item:hover {
+        color: $color-primary;
+        @include animation;
+      }
+    }
+
+    &-info {
+      &__link:hover {
+        background-color: $color-primary_hover;
+        @include animation;
       }
     }
   }
