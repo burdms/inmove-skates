@@ -115,23 +115,40 @@ window.addEventListener('DOMContentLoaded', () => {
   function sizesOnHover() {
     const cards = document.querySelectorAll('.product');
 
-    cards.forEach((item) => {
-      item.addEventListener('mouseover', () => {
-        console.log(1);
-        item
-          .querySelector('.product-sizes')
-          .classList.remove('product-sizes_hidden');
+    if (window.innerWidth >= 993) {
+      cards.forEach((item) => {
+        item.addEventListener('mouseover', () => {
+          item
+            .querySelector('.product-sizes')
+            .classList.remove('product-sizes_hidden');
+        });
       });
-    });
 
-    cards.forEach((item) => {
-      console.log(2);
-      item.addEventListener('mouseout', () => {
-        item
-          .querySelector('.product-sizes')
-          .classList.add('product-sizes_hidden');
+      cards.forEach((item) => {
+        item.addEventListener('mouseout', () => {
+          item
+            .querySelector('.product-sizes')
+            .classList.add('product-sizes_hidden');
+        });
       });
-    });
+    } else {
+      cards.forEach((item) => {
+        item.addEventListener('click', (event) => {
+          const target = event.target;
+          console.log(target);
+
+          if (target.closest('.product-pricing__button')) {
+            item
+              .querySelector('.product-sizes')
+              .classList.toggle('product-sizes_hidden');
+          } else {
+            item
+              .querySelector('.product-sizes')
+              .classList.add('product-sizes_hidden');
+          }
+        });
+      });
+    }
   }
 
   menu();
