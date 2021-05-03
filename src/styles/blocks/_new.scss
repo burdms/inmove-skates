@@ -81,4 +81,18 @@
       margin-bottom: 0;
     }
   }
+
+  @media (max-width: 370px) {
+    &-cards {
+      flex-wrap: wrap;
+      justify-content: center;
+
+      &__item {
+        &:not(:last-child) {
+          margin-bottom: 14px;
+          margin-right: 0;
+        }
+      }
+    }
+  }
 }
