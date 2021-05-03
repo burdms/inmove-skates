@@ -1,5 +1,5 @@
 .bestsellers {
-  height: 611px;
+  min-height: 611px;
 
   &-cards {
     display: flex;
@@ -26,6 +26,8 @@
 
   // Responsive styles
   @media (max-width: 992px) {
+    padding-bottom: 67px;
+
     &-cards {
       justify-content: center;
 

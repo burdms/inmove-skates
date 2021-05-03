@@ -3,6 +3,7 @@ extends pug/layout/head
 block variables
   - var pageTitle = 'InMove Skates'
 
+//- Main page mixins
 mixin advantagesItem(title, description)
   li.advantages-list__item.advantages-item
     .advantages-item__title= title
@@ -13,7 +14,7 @@ mixin categoriesLinks(name)
 
 mixin productCard(className, product, tag)
   div(class= className).product
-    button.product-zoom__button
+    button.product-zoom.product__zoom
       img(src="./images/zoom.svg" alt="Zoom icon").product-zoom__icon
     if (tag)
       span.product__tag= product.tag
@@ -31,11 +32,12 @@ mixin productCard(className, product, tag)
       .product-sizes__button
         button.product-sizes__item 38
         button.product-sizes__item 39.5
-        button.product-sizes__item 40
+        button.product-sizes__item.product-sizes__item_disabled 40
         button.product-sizes__item 40.5
-        button.product-sizes__item 41
+        button.product-sizes__item.product-sizes__item_disabled 41
         button.product-sizes__item 41.5
 
+//- Content
 block content
   main.hero
     .container
@@ -183,3 +185,19 @@ block content
         +productCard('bestsellers-cards__item',{'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png', 'tag': '-10%'}, true)
         +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png'})
         +productCard('bestsellers-cards__item', {'name': 'FR SKATES FR1 80', 'description': 'Black 2020', 'price': '$386', 'image': 'product-card-image.png'})
+
+  section.special
+    .container.container_body
+      img(src="./images/special.png" alt="Glowing wheels").special__image
+
+      .special-info.special__info
+        h2.special-info__title
+          | GLOOOOW!
+        span.special-info__subtitle
+          | LUMINOUS wheels
+        p.special-info__description
+          | Shine bright like a diamond! Most&nbsp;durable city wheels for Freeride Add more colors in skating!
+        a(href="#").button.button_primary.special-info__link.special-link
+          span.special-link__text
+            | Learn more
+          img(src="./images/arrow.svg")

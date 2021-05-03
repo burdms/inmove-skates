@@ -1,6 +1,6 @@
 // Variables
 @import "variables";
-// Variables
+// Mixins
 @import "mixins";
 // Normalize
 @import "normalize";
@@ -8,6 +8,7 @@
 @import "fonts";
 // General settings
 @import "settings";
+
 // Global styles
 @import "global";
 // Header styles
@@ -20,3 +21,5 @@
 @import "blocks/categories";
 // Bestsellers block styles
 @import "blocks/bestsellers";
+// Special block styles
+@import "blocks/special";

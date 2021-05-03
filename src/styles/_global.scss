@@ -12,6 +12,7 @@
   text-overflow: ellipsis;
   color: $color-dark-grey;
   background-color: $color-grey;
+  @include animation;
 
   &_primary {
     @include fontStyling(600);
@@ -54,16 +55,14 @@
   border-radius: $border-radius;
   @include animation;
 
-  &-zoom {
-    &__button {
-      position: absolute;
-      top: 16px;
-      right: 10px;
-      width: 32px;
-      height: 32px;
-      border-radius: 15px;
-      @include animation;
-    }
+  &__zoom {
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 15px;
+    @include animation;
   }
 
   &__tag {
@@ -93,6 +92,7 @@
     margin-bottom: 4px;
     @include fontSize(18px, 22px);
     @include fontStyling(700);
+    text-transform: uppercase;
     color: #000;
   }
 
@@ -139,6 +139,9 @@
     background-color: $color-product;
     border-bottom-left-radius: $border-radius;
     border-bottom-right-radius: $border-radius;
+    opacity: 1;
+    pointer-events: auto;
+    @include animation;
 
     &__text {
       margin-bottom: 13px;
@@ -161,21 +164,25 @@
         background-color: $color-dark-grey;
         @include animation;
       }
+
+      &_disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
     }
 
     &_hidden {
-      display: none;
+      opacity: 0;
+      pointer-events: none;
       @include animation;
     }
   }
 
   // Hover effects
   @media (min-width: 993px) {
-    &-zoom {
-      &__button:hover {
-        background-color: $color-product-cart;
-        @include animation;
-      }
+    &__zoom:hover {
+      background-color: $color-product-cart;
+      @include animation;
     }
 
     &-pricing {
@@ -204,6 +211,7 @@
     &-sizes {
       bottom: auto;
       top: 100px;
+      border-radius: $border-radius;
     }
   }
 
@@ -236,6 +244,10 @@
       &__price {
         @include fontSize(18px, 22px);
       }
+    }
+
+    &-sizes {
+      top: 24px;
     }
   }
 }

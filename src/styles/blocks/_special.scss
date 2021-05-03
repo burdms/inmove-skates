@@ -1,0 +1,167 @@
+.special {
+  position: relative;
+  padding: 134px 0 140px 50px;
+  background: url("../images/special-background.png") no-repeat;
+  background-position: left 87px top -12px;
+  background-color: #f2f2f2;
+  overflow: hidden;
+
+  &-info {
+    &__title {
+      margin-bottom: 18px;
+      @include fontStyling(900);
+      @include fontSize(65px, 79px);
+      color: $color-primary;
+      text-shadow: 0px 4px 50px rgba(246, 127, 103, 0.25);
+    }
+
+    &__subtitle {
+      display: inline-block;
+      margin-bottom: 16px;
+      @include fontStyling(700);
+      @include fontSize(28px, 34px);
+    }
+
+    &__description {
+      margin-bottom: 48px;
+      max-width: 306px;
+      @include fontStyling(500);
+      @include fontSize(16px, 22px);
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+      width: 200px;
+    }
+  }
+
+  &-link {
+    padding-left: 26px;
+    height: 44px;
+
+    &__text {
+      margin-right: 20px;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 68px;
+    left: 272px;
+  }
+
+  &__info {
+    width: 408px;
+    margin-left: auto;
+    margin-right: 15px;
+  }
+
+  // Hover effects
+  @media (min-width: 993px) {
+    &-info {
+      &__link:hover {
+        background-color: $color-primary_hover;
+        @include animation;
+      }
+    }
+  }
+
+  // Responsive styles
+  @media (max-width: 1200px) {
+    background-position: left 15px top 26px;
+    background-size: 500px;
+
+    &__image {
+      top: 10px;
+      left: 70px;
+    }
+
+    &__info {
+      margin-right: 50px;
+    }
+  }
+
+  @media (max-width: 992px) {
+    padding-bottom: 311px;
+    background-position: right 50px bottom -60px;
+
+    &__image {
+      top: auto;
+      left: auto;
+      bottom: -100px;
+      right: 50px;
+    }
+
+    &__info {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 55px 0 311px;
+    background: url("../images/special-background_mobile.png") no-repeat;
+    background-position: right 50% bottom -73px;
+    background-color: #f2f2f2;
+
+    &-info {
+      margin-left: 11px;
+
+      &__title {
+        margin-bottom: 21px;
+        @include fontSize(51px, 60px);
+      }
+
+      &__subtitle {
+        margin-bottom: 11px;
+        @include fontSize(26px, 32px);
+      }
+
+      &__description {
+        margin-bottom: 26px;
+        max-width: 267px;
+        @include fontSize(14px, 22px);
+      }
+    }
+
+    &-link {
+      padding-left: 16px;
+    }
+
+    &__image {
+      width: 243px;
+      bottom: -40px;
+      right: 25%;
+    }
+
+    &__info {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 450px) {
+    background-position: right -15px bottom -73px;
+
+    &__image {
+      right: 16px;
+    }
+  }
+
+  @media (max-width: 370px) {
+    background-position: right -36px bottom -73px;
+
+    &-info {
+      margin-left: 0;
+
+      &__title {
+        margin-bottom: 21px;
+        @include fontSize(45px, 54px);
+      }
+    }
+
+    &__image {
+      right: 40px;
+    }
+  }
+}
