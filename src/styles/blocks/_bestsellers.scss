@@ -1,0 +1,25 @@
+.bestsellers {
+  height: 611px;
+
+  &-cards {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    margin-bottom: 6px;
+    @include fontSize(26px, 32px);
+    @include fontStyling(700);
+    text-align: center;
+    color: #000;
+  }
+
+  &__link {
+    display: block;
+    margin-bottom: 34px;
+    font-family: Roboto, sans-serif;
+    @include fontSize(14px, 16px);
+    @include fontStyling(400);
+    text-align: center;
+  }
+}

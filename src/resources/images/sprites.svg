@@ -27,8 +27,8 @@
     <path clip-rule="evenodd" d="M12.033 12.21a4.596 4.596 0 10-4.596-4.596A4.58 4.58 0 0012 12.21h.032z" stroke-width="1.429" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>
 
-  <!-- Header cart icon -->
-  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" id="cart-header">
+  <!-- Cart icon -->
+  <symbol fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" id="cart">
     <path d="M16.698 9.51V6.476a3.772 3.772 0 00-3.772-3.773 3.773 3.773 0 00-3.79 3.756V9.51" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
     <path clip-rule="evenodd" d="M17.668 21.204H8.183a4.256 4.256 0 01-4.258-4.255v-5.516a4.256 4.256 0 014.258-4.255h9.485a4.256 4.256 0 014.257 4.256v5.516a4.256 4.256 0 01-4.257 4.255z" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
   </symbol>

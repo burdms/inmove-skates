@@ -37,3 +37,157 @@
     }
   }
 }
+
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 230px;
+  padding: 39px 22px 24px;
+  background-color: $color-product;
+  border-radius: $border-radius;
+  @include animation;
+
+  &-zoom {
+    &__button {
+      position: absolute;
+      top: 16px;
+      right: 10px;
+      width: 32px;
+      height: 32px;
+      border-radius: 15px;
+      @include animation;
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    top: 26px;
+    left: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    @include fontSize(16px, 20px);
+    @include fontStyling(700);
+    border-radius: 50%;
+    color: #fff;
+    background-color: $color-primary;
+  }
+
+  &__image {
+    margin-bottom: 32px;
+    width: 100%;
+    height: 203px;
+    object-fit: cover;
+  }
+
+  &__title {
+    margin-bottom: 4px;
+    @include fontSize(18px, 22px);
+    @include fontStyling(700);
+    color: #000;
+  }
+
+  &__description {
+    margin-bottom: 8px;
+    @include fontSize(14px, 17px);
+    @include fontStyling(400);
+  }
+
+  &-pricing {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__price {
+      @include fontSize(20px, 24px);
+      @include fontStyling(500);
+      color: #000;
+    }
+
+    &__button {
+      width: 41px;
+      height: 40px;
+      background-color: $color-product-cart;
+      border-radius: 15px;
+      @include animation;
+    }
+
+    &__cart {
+      width: 24px;
+      height: 24px;
+      stroke: $color-icons;
+      @include animation;
+    }
+  }
+
+  &-sizes {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -130px;
+    padding: 23px;
+    background-color: $color-product;
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+
+    &__text {
+      margin-bottom: 13px;
+      @include fontSize(14px, 17px);
+      @include fontStyling();
+    }
+
+    &__item {
+      margin-bottom: 7px;
+      width: 57px;
+      height: 32px;
+      @include fontSize(12px, 15px);
+      @include fontStyling();
+      background-color: #ebebeb;
+      border-radius: 10px;
+      @include animation;
+
+      &_active {
+        color: #fff;
+        background-color: $color-dark-grey;
+        @include animation;
+      }
+    }
+
+    &_hidden {
+      display: none;
+    }
+  }
+
+  // Hover effects
+  @media (min-width: 993px) {
+    &-zoom {
+      &__button:hover {
+        background-color: $color-product-cart;
+        @include animation;
+      }
+    }
+
+    &-pricing {
+      &__button:hover {
+        background-color: $color-primary;
+        @include animation;
+
+        .product-pricing__cart {
+          stroke: #fff;
+          @include animation;
+        }
+      }
+    }
+
+    &-sizes {
+      &__item:hover {
+        color: #fff;
+        background-color: $color-dark-grey;
+        @include animation;
+      }
+    }
+  }
+}
