@@ -25,37 +25,45 @@ footer.footer
             +socialItems('telegram', 'https://t.me/InMoveSkates')
 
         nav.footer-nav.footer__nav
-          ul.footer-nav__list.footer-nav__list_information
-            | Information
-            +navItems('Wholesales (for stores)')
-            +navItems('About us')
-            +navItems('Shipping')
-            +navItems('How to choose size')
-            +navItems('Inline skates lessons')
-          
-          ul.footer-nav__list.footer-nav__list_catalog
-            | Catalog
-            +navItems('Skates')
-            +navItems('Protection')
-            +navItems('Wheels')
-            +navItems('Accessories')
-            +navItems('Backpack')
-            +navItems('Brands')
+          .footer-nav__group.footer-nav__group_information
+            h3.footer-nav__title
+              | Information
+            ul.footer-nav__list
+              +navItems('Wholesales (for stores)')
+              +navItems('About us')
+              +navItems('Shipping')
+              +navItems('How to choose size')
+              +navItems('Inline skates lessons')
 
-          .footer-nav__list.footer-nav__list_contacts
-            | Contacts
-            p.footer-nav__item.footer-nav__item_contacts
-              | Philadelphia, PA, United States 19151
-              br 
-              | (online store only)
-            p.footer-nav__item.footer-nav__item_contacts
-              | 10:00 AM - 8:00 PM
+          .footer-nav__group.footer-nav__group_catalog
+            h3.footer-nav__title
+              | Catalog
+            ul.footer-nav__list
+              +navItems('Skates')
+              +navItems('Protection')
+              +navItems('Wheels')
+              +navItems('Accessories')
+              +navItems('Backpack')
+              +navItems('Brands')
+
+          .footer-nav__group.footer-nav__group_contacts
+            h3.footer-nav__title
+              | Contacts
+            .footer-nav__list
+              p.footer-nav__item.footer-nav__item_contacts
+                | Philadelphia, PA, United States 19151
+                br 
+                | (online store only)
+              p.footer-nav__item.footer-nav__item_contacts
+                | 10:00 AM - 8:00 PM
           
-          ul.footer-nav__list.footer-nav__list_account
-            | My account
-            +navItems('Order history')
-            +navItems('Returns')
-            +navItems('Newsletter')
+          .footer-nav__group.footer-nav__group_account
+            h3.footer-nav__title
+              | My account
+            ul.footer-nav__list
+              +navItems('Order history')
+              +navItems('Returns')
+              +navItems('Newsletter')
 
         .footer-info.footer__info
           .footer-info__question
@@ -67,3 +75,4 @@ footer.footer
 
   .footer-bottom
     .footer-container
+      .footer-bottom__wrapper

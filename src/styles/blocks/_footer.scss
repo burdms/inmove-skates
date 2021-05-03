@@ -89,9 +89,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    &__list {
-      @include fontStyling(700);
-
+    &__group {
       &_information {
         margin-right: 119px;
       }
@@ -103,6 +101,11 @@
       &_contacts {
         display: none;
       }
+    }
+
+    &__title {
+      @include fontSize(12px, 15px);
+      @include fontStyling(700);
     }
 
     &__item {
@@ -269,7 +272,7 @@
       flex-basis: 100%;
       justify-content: space-between;
 
-      &__list {
+      &__group {
         margin-right: 0;
 
         &_contacts {
@@ -291,7 +294,7 @@
     }
 
     &__nav {
-      margin-bottom: 10px;
+      margin-bottom: 33px;
     }
   }
 }
@@ -360,6 +363,10 @@
     &__company {
       margin-bottom: 11px;
     }
+
+    &__nav {
+      margin-bottom: 10px;
+    }
   }
 }
 
@@ -369,7 +376,7 @@
       flex-basis: 75%;
       justify-content: start;
 
-      &__list {
+      &__group {
         &_information {
           margin-right: 75px;
         }
@@ -400,12 +407,12 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 460px) {
   .footer {
     &-nav {
       flex-basis: 100%;
 
-      &__list {
+      &__group {
         &:nth-child(odd) {
           margin-left: 0;
         }
@@ -419,7 +426,7 @@
     &-nav {
       justify-content: center;
 
-      &__list {
+      &__group {
         flex-basis: 100%;
         margin-left: 24%;
 
