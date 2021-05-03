@@ -13,6 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
     searchButton.addEventListener('click', () => {
       if (!menu.classList.contains('menu_active')) {
         menu.classList.add('menu_active');
+        document.body.classList.add('js-overflow_hidden');
       }
 
       searchInput.classList.toggle('menu-search_active');
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     burger.addEventListener('click', () => {
       menu.classList.toggle('menu_active');
+      document.body.classList.toggle('js-overflow_hidden');
     });
   }
 

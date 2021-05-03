@@ -1,5 +1,6 @@
 .header {
   position: relative;
+  z-index: 110;
 
   &-container {
     position: relative;
@@ -117,7 +118,7 @@
 
 .menu {
   position: fixed;
-  top: 80px;
+  top: 77px;
   left: 0;
   right: 0;
   height: 99vh;
@@ -125,6 +126,7 @@
   flex-direction: column;
   align-items: center;
   padding: 40px 0 115px;
+  background-color: #fff;
   overflow: scroll;
 
   &-search {
@@ -263,6 +265,12 @@
 
 @media (max-width: 992px) {
   .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+
     &-container {
       max-width: 700px;
       padding: 33px 0 13px;
