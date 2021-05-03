@@ -26,7 +26,7 @@ gulp.task('pug', () => {
 
 gulp.task('sass', () => {
   return gulp
-    .src('./src/styles/**/*.scss')
+    .src('./src/styles/styles.scss')
     .pipe(sourcemaps.init())
     .pipe(
       sass({
@@ -74,6 +74,11 @@ gulp.task('clean', () => {
   return del('./build/*');
 });
 
+gulp.task(
+  'build',
+  gulp.series('clean', 'resources', gulp.parallel('pug', 'js'), 'sass')
+);
+
 gulp.task('watch', () => {
   gulp.watch('./src/**/*.pug', gulp.series('pug'));
   gulp.watch('./src/styles/**/*.scss', gulp.series('sass'));
@@ -98,9 +103,4 @@ gulp.task(
     'sass',
     gulp.parallel('watch', 'serve')
   )
-);
-
-gulp.task(
-  'build',
-  gulp.series('clean', 'resources', gulp.parallel('pug', 'js'), 'sass')
 );
