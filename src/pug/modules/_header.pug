@@ -3,10 +3,7 @@ mixin headerLink(link, className, name)
 
 header.header
   .header-container
-    //- button.header-burger#menu-burger
-    //-   svg.header-burger__icon
-    //-     use(xlink:href="./images/sprites.svg#burger-header")    
-    a.header-burger#menu-burger
+    a(href="#").header-burger#menu-burger
       span.header-burger__line.header-burger__line_top
       span.header-burger__line.header-burger__line_middle
       span.header-burger__line.header-burger__line_bottom

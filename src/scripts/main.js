@@ -20,7 +20,8 @@ window.addEventListener('DOMContentLoaded', () => {
       searchInput.classList.toggle('menu-search_active');
     });
 
-    burger.addEventListener('click', () => {
+    burger.addEventListener('click', (event) => {
+      event.preventDefault();
       burger.classList.toggle('header-burger_active');
       menu.classList.toggle('menu_active');
       document.body.classList.toggle('js-overflow_hidden');
