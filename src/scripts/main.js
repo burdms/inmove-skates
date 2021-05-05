@@ -143,21 +143,32 @@ window.addEventListener('DOMContentLoaded', () => {
         });
       });
     } else {
-      cards.forEach((item) => {
-        item.addEventListener('click', (event) => {
-          const target = event.target;
-          console.log(target);
+      document.addEventListener('click', (event) => {
+        const target = event.target,
+          targetParent = target.closest('.product'),
+          sizes = document.querySelectorAll('.product-sizes');
 
+        function closeAllSizes(current) {
+          sizes.forEach((item) => {
+            if (item !== current) {
+              item.classList.add('product-sizes_hidden');
+            }
+          });
+        }
+
+        if (targetParent) {
           if (target.closest('.product-pricing__button')) {
-            item
+            closeAllSizes(targetParent.querySelector('.product-sizes'));
+
+            targetParent
               .querySelector('.product-sizes')
               .classList.toggle('product-sizes_hidden');
           } else {
-            item
-              .querySelector('.product-sizes')
-              .classList.add('product-sizes_hidden');
+            closeAllSizes();
           }
-        });
+        } else {
+          closeAllSizes();
+        }
       });
     }
   }
