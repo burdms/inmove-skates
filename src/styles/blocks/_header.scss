@@ -11,14 +11,59 @@
     padding: 8px 0 7px;
   }
 
+  // &-burger {
+  //   display: none;
+  //   width: 24px;
+  //   height: 24px;
+
+  //   &__icon {
+  //     width: 23.39px;
+  //     height: 19.34px;
+  //   }
+  // }
+
   &-burger {
+    position: relative;
     display: none;
     width: 24px;
-    height: 24px;
+    height: 20px;
 
-    &__icon {
-      width: 23.39px;
-      height: 19.34px;
+    &__line {
+      position: absolute;
+      height: 4px;
+      background-color: $color-dark-grey;
+      border-radius: 3px;
+      @include animation;
+
+      &_top {
+        left: 0;
+        top: 0;
+        width: 50%;
+      }
+
+      &_middle {
+        top: 50%;
+        margin-top: -2px;
+        width: 100%;
+      }
+
+      &_bottom {
+        bottom: 0;
+        right: 0;
+        width: 50%;
+      }
+    }
+
+    &_active {
+      .header-burger__line {
+        &_top {
+          left: 50%;
+        }
+
+        &_bottom {
+          right: 50%;
+        }
+      }
     }
   }
 
@@ -335,7 +380,8 @@
     }
 
     &-burger {
-      margin-left: 10px;
+      margin-left: 15px;
+      margin-top: -5px;
     }
   }
 }

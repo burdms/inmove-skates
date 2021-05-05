@@ -12,6 +12,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     searchButton.addEventListener('click', () => {
       if (!menu.classList.contains('menu_active')) {
+        burger.classList.add('header-burger_active');
         menu.classList.add('menu_active');
         document.body.classList.add('js-overflow_hidden');
       }
@@ -20,8 +21,13 @@ window.addEventListener('DOMContentLoaded', () => {
     });
 
     burger.addEventListener('click', () => {
+      burger.classList.toggle('header-burger_active');
       menu.classList.toggle('menu_active');
       document.body.classList.toggle('js-overflow_hidden');
+
+      if (searchInput.classList.contains('menu-search_active')) {
+        searchInput.classList.remove('menu-search_active');
+      }
     });
   }
 
